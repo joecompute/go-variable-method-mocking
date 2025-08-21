@@ -66,7 +66,8 @@ func TestWTestifyMockBasic(t *testing.T) {
 
 }
 
-// not recommended, but possible
+// not recommended, but possible when necessary
+// (e.g. when you have to call an API for an integration test)
 func (m *ServiceMock) myMethod1InstrumentedWithOrigCallTracking(input string) string {
 	args := m.Called(input)
 	originalReturn := m.Service.myMethod1Impl(input)
